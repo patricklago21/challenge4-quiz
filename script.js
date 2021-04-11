@@ -6,6 +6,11 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 const timerContainer = document.getElementById('timer')
 const timeLeft = document.getElementById('time-left')
 var counter = 30
+const highscoreContainer = document.getElementById('highscore-container')
+const highscoreAmount = document.getElementById('highscore')
+const historyContainer = document.getElementById('history-container')
+const highscoreButton = document.getElementById('highscore-btn')
+//const answeredCorrect = answer.correct
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -16,11 +21,9 @@ startButton.addEventListener('click', () => {
     timeLeft.textContent = counter
     counter --;
     if(counter === 0) {
-        timeLeft.textContent = 'Time Expired'
-        timeLeft.classList.add('time-expired')
         clearInterval(startCountdown)
+        highscore()
     }
-    console.log(counter)
     }
     var startCountdown = setInterval(countdown, 1000)
 })
@@ -31,6 +34,8 @@ nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
+
+highscoreButton.addEventListener('click', history)
 
 function startGame() {
     console.log('started')
@@ -54,7 +59,7 @@ function showQuestion(question) {
         button.classList.add('btn')
         if (answer.correct) {
             button.dataset.correct = answer.correct
-        }
+        }  
         button.addEventListener('click', selectAnswer)
         answerButtonsElement.appendChild(button)
     })
@@ -77,10 +82,10 @@ function selectAnswer(e) {
     })
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
-    } else {
-        startButton.innerText = 'Restart'
-        startButton.classList.remove('hide')
-        // add high score path here
+    } else { 
+        //startButton.innerText = 'See Your Score'
+        //startButton.classList.remove('hide')
+        highscore()
     }
 }
 
@@ -129,3 +134,19 @@ const questions = [
         ]
     }
 ]
+
+function highscore() {
+    resetState()
+    highscoreContainer.classList.remove('hide')
+    timerContainer.classList.add('hide')
+    startButton.classList.add('hide')
+    questionContainerElement.classList.add('hide')
+}
+
+function history() {
+    historyContainer.classList.remove('hide')
+    timerContainer.classList.add('hide')
+    highscoreContainer.classList.add('hide')
+}
+
+//console.log(button.dataset.correct)
