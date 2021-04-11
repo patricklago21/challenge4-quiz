@@ -1,46 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    <title>Challenge 4 Quiz</title>
-</head>
-
-<body>
-   <div class="container">
-       <div id="question-container" class="hide">
-           <div id="question">Question</div>
-           <div id="answer-buttons" class="btn-grid">
-               <button class="btn">Answer1</button>
-               <button class="btn">Answer2</button>
-               <button class="btn">Answer3</button>
-               <button class="btn">Answer4</button>
-           </div>
-       </div>
-       <div class="controls">
-           <button id="start-btn" class="start-btn btn">Start</button>
-           <button id="next-btn" class="next-btn btn hide">Next</button>
-       </div>
-       <div id="timer" class="hide">
-            Time Left: <div id="time-left" class="time-left"></div>
-        </div>
-       <div id="highscore-container" class="highscore-container hide">
-           <h2>All done!</h2>
-           <div id="highscore">Highscore</div>
-           <div>
-               <label for="initials">Enter your initials:</label>
-               <input type="text" name="initials" id="initials">
-           </div>
-           <button id="highscore-btn" class="highscore-btn btn">Submit</button>
-       </div>
-       <div id="history-container" class="hide">
-            <h2>Highscores!</h2>
-            <div>High Score:</div><div>1</div>
-            <div>Your Score:</div><div>2</div>
-       </div>
-   </div> 
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Quick Quiz</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="home" class="flex-center flex-column">
+        <h1>Quick Quiz</h1>
+        <a class="btn" href="game.html">Play</a>
+        <a class="btn" href="/highscores.html">High Scores</a>
+      </div>
+    </div>
+  </body>
 </html>
