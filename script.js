@@ -3,18 +3,34 @@ const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
-
-// const time = 30
-// const timeLeft = document.getElementById('time-left')
+const timerContainer = document.getElementById('timer')
+const timeLeft = document.getElementById('time-left')
+var counter = 30
 
 let shuffledQuestions, currentQuestionIndex
 
-startButton.addEventListener('click', startGame)
+startButton.addEventListener('click', () => {
+    startGame()
+    var countdown = function() {
+        timerContainer.classList.remove('hide')
+    timeLeft.textContent = counter
+    counter --;
+    if(counter === 0) {
+        timeLeft.textContent = 'Time Expired'
+        timeLeft.classList.add('time-expired')
+        clearInterval(startCountdown)
+    }
+    console.log(counter)
+    }
+    var startCountdown = setInterval(countdown, 1000)
+})
+
+
+
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
-
 
 function startGame() {
     console.log('started')
@@ -81,19 +97,6 @@ function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
-
-// function timer() {
-//     time = time - 1;
-//     if (time < 30) {
-//         timeLeft.innerHTML = time;
-//     }
-
-//     if (time < 1) {
-//         window.clearInterval(update);
-//     }
-// }
-
-// update = setInterval("timer()", 1000);
 
 const questions = [
     {

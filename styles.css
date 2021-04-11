@@ -95,3 +95,7 @@ body.wrong {
 .time-left {
     padding-left: 10px;
 }
+
+.time-expired {
+    color: red;
+}
