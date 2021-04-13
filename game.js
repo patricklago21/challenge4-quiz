@@ -102,6 +102,11 @@ choices.forEach(choice => {
       incrementScore(CORRECT_BONUS);
     }
 
+    if (classToApply === "incorrect") {
+      window.alert("Incorrect answer. 5 seconds deducted from timer.")
+      counter -= 5;
+    }
+
     selectedChoice.parentElement.classList.add(classToApply);
 
     setTimeout(() => {
