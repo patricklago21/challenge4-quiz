@@ -4,4 +4,4 @@
 
 ## Deployed Application: https://patricklago21.github.io/challenge4-quiz/index.html
 
-![Alt text](https://raw.githubusercontent.com/patricklago21/challenge4-quiz/main/Screen%20Shot%202021-04-12%20at%208.30.10%20PM.png)
+![Alt text](https://raw.githubusercontent.com/patricklago21/challenge4-quiz/main/Screen%20Shot%202021-04-12%20at%208.30.10%20PM.png "Highscores")
