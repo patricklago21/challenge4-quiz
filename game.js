@@ -2,12 +2,16 @@ const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const questionCounterText = document.getElementById("questionCounter");
 const scoreText = document.getElementById("score");
+const timerText = document.getElementById("timer");
+
+
 
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuesions = [];
+var counter = 30; 
 
 let questions = [
   {
@@ -41,7 +45,20 @@ let questions = [
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 3;
 
+var countdown = setInterval(function () {
+  counter--;
+  timerText.innerText = counter;
+
+  if (counter === 0) {
+    clearInterval(countdown);
+    window.alert("Time has run out! Please try again.")
+    return window.location.assign("index.html");
+    
+  }
+}, 1000);
+
 startGame = () => {
+  // add timer logic here
   questionCounter = 0;
   score = 0;
   availableQuesions = [...questions];
